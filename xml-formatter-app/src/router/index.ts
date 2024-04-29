@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import XmlFormatter from '../views/XmlFormatter.vue'
-import XmlPrettify from '../views/XmlCompress.vue'
+import XmlCompress from '../views/XmlCompress.vue'
 
 const routes: Array<RouteRecordRaw> = [
     {
@@ -11,7 +11,7 @@ const routes: Array<RouteRecordRaw> = [
     {
         path: '/xml-compress',
         name: 'XmlPretify',
-        component: XmlPrettify
+        component: XmlCompress
     }
 ]
 
