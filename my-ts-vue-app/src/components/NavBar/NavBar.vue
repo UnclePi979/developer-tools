@@ -8,21 +8,12 @@
   </nav>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      menuItems: [
-        { text: 'Home', path: '/' },
-        { text: 'XML Formatter', path: '/xml-formatter' },
-        { text: 'XML Compress', path: '/xml-compress' },
-        { text: 'Contact', path: '/contact' }
-        // 更多 menu item ...
-      ]
-    };
-  }
-  // 如果你使用TypeScript，你还需要定义相关的接口或类型
-};
+<script setup lang="ts">
+const menuItems =
+    [
+      {text: 'XML Formatter', path: '/xml-formatter'}
+    ]
+
 </script>
 
 <style scoped>
