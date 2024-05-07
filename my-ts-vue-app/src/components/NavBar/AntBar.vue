@@ -37,7 +37,7 @@ function getItem(
 
 const items: ItemType[] = reactive([
   getItem('Navigation One', 'sub1', () => h(MailOutlined), [
-    getItem('Item 1', 'g1', null, [getItem('XML 美化', 'xml-formatter'), getItem('XML 压缩', '2')], 'group'),
+    getItem('Item 1', 'g1', null, [getItem('XML 美化', 'xml-formatter'), getItem('XML 压缩', 'xml-compress')], 'group'),
     getItem('Item 2', 'g2', null, [getItem('Option 3', '3'), getItem('Option 4', '4')], 'group'),
   ]),
 

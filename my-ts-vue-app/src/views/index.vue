@@ -2,13 +2,12 @@
   <div class="p-4">
 
     <div class="md:flex enter-y">
-      <XmlFormatter/>
+      <router-view/>
     </div>
   </div>
 </template>
 <script lang="ts" setup>
 import {ref} from 'vue';
-import XmlFormatter from "./XmlFormatter.vue";
 
 const loading = ref(true);
 

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {CSSProperties, onMounted} from 'vue';
 import AntBar from "./components/NavBar/AntBar.vue";
-
+import Index from "./views/index.vue";
 
 onMounted(() => {
   console.log(444)
@@ -24,10 +24,10 @@ const contentStyle: CSSProperties = {
 };
 
 const siderStyle: CSSProperties = {
-  textAlign: 'center',
   lineHeight: '120px',
   color: '#fff',
   backgroundColor: '#3ba0e9',
+  overflow: 'hidden',
 };
 
 const footerStyle: CSSProperties = {
@@ -43,19 +43,29 @@ const footerStyle: CSSProperties = {
       <a-layout>
         <a-layout-header :style="headerStyle">Header</a-layout-header>
         <a-layout>
-          <a-layout-sider :style="siderStyle">
-            <AntBar/>
+          <a-layout-sider :style="siderStyle" width="250px" >
+            <div class="ant-bar">
+              <AntBar/>
+            </div>
           </a-layout-sider>
           <a-layout-content :style="contentStyle">
             <index/>
-
           </a-layout-content>
         </a-layout>
-        <a-layout-footer :style="footerStyle">Footer</a-layout-footer>
+        <a-layout-footer :style="footerStyle">Ant Design ©2024 Created by Ant UED</a-layout-footer>
       </a-layout>
     </a-space>
   </div>
 </template>
 
 <style scoped>
+
+.ant-bar {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  min-height: 100%;
+  background-color: white;
+}
 </style>
