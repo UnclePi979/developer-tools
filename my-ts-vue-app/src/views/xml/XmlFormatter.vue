@@ -1,10 +1,10 @@
 <template>
   <div class="xml-formatter">
     <h2>XML Formatter</h2>
-    <textarea v-model="xmlInput" placeholder="Enter XML here..." rows="10"></textarea>
-    <button @click="formatXmlHandler" class="format-button">Format XML</button>
+    <a-textarea v-model:value="xmlInput" placeholder="Enter XML here..." rows="10" autocapitalize="on"></a-textarea>
+    <a-button type="primary" @click="formatXmlHandler">Format XML</a-button>
     <div v-if="errorMessage" class="error-message">{{ errorMessage }}</div>
-    <textarea v-model="formattedXml" readonly placeholder="Formatted XML will appear here..." rows="20"></textarea>
+    <a-textarea v-model:value="formattedXml" readonly placeholder="Formatted XML will appear here..." rows="20" autocapitalize="on"></a-textarea>
   </div>
 </template>
 
@@ -12,9 +12,9 @@
 import {ref} from 'vue';
 import { formatXml } from '../../services/api.ts';
 
-const xmlInput = ref('');
-const formattedXml = ref('');
-const errorMessage = ref('');
+const xmlInput = ref<string>('');
+const formattedXml = ref<string>('');
+const errorMessage = ref<string>('');
 
 async function formatXmlHandler() {
   if (xmlInput.value.trim() === '') {

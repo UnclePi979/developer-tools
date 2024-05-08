@@ -1,32 +1,16 @@
-import axios, { AxiosError } from 'axios';
+import axios from 'axios';
+import {SERVICE_URL} from "./url.ts";
 
-export async function formatXml(xml: string): Promise<string | null> {
-    try {
-        const response = await axios.post('http://localhost:8082/api/xml/format', xml, {
-            headers: {
-                'Content-Type': 'text/plain',
-            },
-        });
-        return response.data;
-    } catch (error) {
-        const typedError = error as AxiosError;
-        console.error(typedError);
-        return null;
-    }
-}
+export const formatXml = async (params: string): Promise<string | null> => {
+    const result = await axios.post(`${SERVICE_URL.FORMAT_XML_URL}`, params,{
+        headers: {
+            'Content-Type': 'text/plain',
+        },
+    });
+    return result.data;
+};
 
-
-export async function compressXml(xml: string): Promise<string | null> {
-    try {
-        const response = await axios.post('http://localhost:8082/api/xml/compress', xml, {
-            headers: {
-                'Content-Type': 'text/plain',
-            },
-        });
-        return response.data;
-    } catch (error) {
-        const typedError = error as AxiosError;
-        console.error(typedError);
-        return null;
-    }
-}
+export const compressXml = async (params: string): Promise<string | null> => {
+    const result = await axios.post(`${SERVICE_URL.COMPRESS_XML_URL}`, params);
+    return result.data;
+};

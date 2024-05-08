@@ -15,6 +15,7 @@ const headerStyle: CSSProperties = {
   paddingInline: 50,
   lineHeight: '64px',
   backgroundColor: '#7dbcea',
+  fontSize: '30px'
 };
 
 const contentStyle: CSSProperties = {
@@ -41,7 +42,7 @@ const footerStyle: CSSProperties = {
   <div style="height: 100vh">
     <a-space direction="vertical" :style="{ width: '100%' }" :size="[0, 48]">
       <a-layout>
-        <a-layout-header :style="headerStyle">Header</a-layout-header>
+        <a-layout-header :style="headerStyle">Developer Tools</a-layout-header>
         <a-layout>
           <a-layout-sider :style="siderStyle" width="250px" >
             <div class="ant-bar">

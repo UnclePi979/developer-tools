@@ -1,16 +1,17 @@
 <template>
   <div class="xml-compress">
     <h2>XML Compress</h2>
-    <textarea v-model="xmlInput" placeholder="Enter XML here..." rows="10"></textarea>
-    <button @click="compressXmlHandler" class="format-button">Format XML</button>
+    <a-textarea v-model:value="xmlInput" placeholder="Enter XML here..." rows="10"></a-textarea>
+    <a-button type="primary" @click="compressXmlHandler">Compress XML</a-button>
     <div v-if="errorMessage" class="error-message">{{ errorMessage }}</div>
-    <textarea v-model="compressedXml" readonly placeholder="Compressed XML will appear here..." rows="20"></textarea>
+    <a-textarea v-model:value="compressedXml" readonly placeholder="Compressed XML will appear here..."
+                rows="20"></a-textarea>
   </div>
 </template>
 
 <script setup lang="ts">
 import {ref} from 'vue';
-import { compressXml } from '../../services/api.ts';
+import {compressXml} from '../../services/api.ts';
 
 const xmlInput = ref('');
 const compressedXml = ref('');
@@ -49,11 +50,6 @@ async function compressXmlHandler() {
   margin-bottom: 10px;
   padding: 10px;
   font-family: 'Courier New', monospace;
-}
-
-.format-button {
-  padding: 10px 20px;
-  margin-bottom: 10px;
 }
 
 .error-message {
