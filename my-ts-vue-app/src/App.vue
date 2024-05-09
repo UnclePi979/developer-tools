@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { CSSProperties } from "vue";
 import AntBar from "./components/NavBar/AntBar.vue";
-import index from "./views/index.vue";
 
 const headerStyle: CSSProperties = {
   textAlign: "center",
@@ -44,12 +43,12 @@ const footerStyle: CSSProperties = {
             </div>
           </a-layout-sider>
           <a-layout-content :style="contentStyle">
-            <index />
+            <router-view />
           </a-layout-content>
         </a-layout>
         <a-layout-footer :style="footerStyle"
-          >Ant Design ©2024 Created by Ant UED</a-layout-footer
-        >
+          >Ant Design ©2024 Created by Ant UED
+        </a-layout-footer>
       </a-layout>
     </a-space>
   </div>
