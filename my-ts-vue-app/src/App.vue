@@ -14,9 +14,8 @@ const headerStyle: CSSProperties = {
 };
 
 const contentStyle: CSSProperties = {
-  textAlign: "center",
   minHeight: 120,
-  color: "#fff",
+  color: "black",
 };
 
 const siderStyle: CSSProperties = {
