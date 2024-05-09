@@ -1,40 +1,35 @@
 <script setup lang="ts">
-import {CSSProperties, onMounted} from 'vue';
+import { CSSProperties } from "vue";
 import AntBar from "./components/NavBar/AntBar.vue";
-import Index from "./views/index.vue";
-
-onMounted(() => {
-  console.log(444)
-  document.getElementsByTagName("body")[0].style.margin = "0px"
-})
+import index from "./views/index.vue";
 
 const headerStyle: CSSProperties = {
-  textAlign: 'center',
-  color: '#fff',
+  textAlign: "center",
+  color: "#fff",
   height: 64,
   paddingInline: 50,
-  lineHeight: '64px',
-  backgroundColor: '#7dbcea',
-  fontSize: '30px'
+  lineHeight: "64px",
+  backgroundColor: "#7dbcea",
+  fontSize: "30px",
 };
 
 const contentStyle: CSSProperties = {
-  textAlign: 'center',
+  textAlign: "center",
   minHeight: 120,
-  color: '#fff',
+  color: "#fff",
 };
 
 const siderStyle: CSSProperties = {
-  lineHeight: '120px',
-  color: '#fff',
-  backgroundColor: '#3ba0e9',
-  overflow: 'hidden',
+  lineHeight: "120px",
+  color: "#fff",
+  backgroundColor: "#3ba0e9",
+  overflow: "hidden",
 };
 
 const footerStyle: CSSProperties = {
-  textAlign: 'center',
-  color: '#fff',
-  backgroundColor: '#7dbcea',
+  textAlign: "center",
+  color: "#fff",
+  backgroundColor: "#7dbcea",
 };
 </script>
 
@@ -44,22 +39,27 @@ const footerStyle: CSSProperties = {
       <a-layout>
         <a-layout-header :style="headerStyle">Developer Tools</a-layout-header>
         <a-layout>
-          <a-layout-sider :style="siderStyle" width="250px" >
+          <a-layout-sider :style="siderStyle" width="250px">
             <div class="ant-bar">
-              <AntBar/>
+              <AntBar />
             </div>
           </a-layout-sider>
           <a-layout-content :style="contentStyle">
-            <index/>
+            <index />
           </a-layout-content>
         </a-layout>
-        <a-layout-footer :style="footerStyle">Ant Design ©2024 Created by Ant UED</a-layout-footer>
+        <a-layout-footer :style="footerStyle"
+          >Ant Design ©2024 Created by Ant UED</a-layout-footer
+        >
       </a-layout>
     </a-space>
   </div>
 </template>
 
 <style scoped>
+body {
+  margin: 0;
+}
 
 .ant-bar {
   display: flex;
