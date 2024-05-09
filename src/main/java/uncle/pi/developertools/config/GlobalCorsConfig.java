@@ -19,7 +19,7 @@ public class GlobalCorsConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 // 允许从某个端口发起的全部跨源请求
-                registry.addMapping("/api/**").allowedOrigins("http://localhost:5173").allowedMethods("*");
+                registry.addMapping("/api/**").allowedOrigins("http://localhost:3000").allowedMethods("*");
             }
         };
     }

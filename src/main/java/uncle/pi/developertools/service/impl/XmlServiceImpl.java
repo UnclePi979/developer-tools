@@ -1,19 +1,19 @@
 package uncle.pi.developertools.service.impl;
 
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 import org.w3c.dom.Document;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import uncle.pi.developertools.service.XmlService;
 
-import org.springframework.stereotype.Service;
-import org.springframework.util.StringUtils;
-
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.*;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.IOException;
@@ -53,10 +53,7 @@ public class XmlServiceImpl implements XmlService {
 
         // Strategy for XML compression can vary,
         // for example, remove whitespace between tags and trim the document.
-        String compressedXml = xml
-                .replaceAll(">\\s+<", "><") // Remove whitespace between tags
-                .trim(); // Trim the result
-
-        return compressedXml;
+        // Remove whitespace between tags
+        return xml.replaceAll(">\\s+<", "><").trim();
     }
 }
